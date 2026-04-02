@@ -1,0 +1,20 @@
+{
+  "name": "pmsecai",
+  "private": true,
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "db:push": "turbo run db:push --filter=@pmsecai/db",
+    "db:generate": "turbo run db:generate --filter=@pmsecai/db"
+  },
+  "devDependencies": {
+    "turbo": "^2.3.3",
+    "typescript": "^5.7.3"
+  },
+  "pnpm": {
+    "overrides": {
+      "axios": "1.14.0"
+    }
+  }
+}
