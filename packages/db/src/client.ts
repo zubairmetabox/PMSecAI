@@ -1,6 +1,6 @@
 import { neon } from "@neondatabase/serverless";
 import { drizzle } from "drizzle-orm/neon-http";
-import * as schema from "./schema.js";
+import * as schema from "./schema";
 
 // Lazily initialised so imports don't throw in environments without DATABASE_URL
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -18,6 +18,6 @@ export function getDb() {
 // Convenience default export — works when DATABASE_URL is guaranteed present (e.g. web app)
 export const db = new Proxy({} as ReturnType<typeof drizzle<typeof schema>>, {
   get(_target, prop) {
-    return (getDb() as Record<string | symbol, unknown>)[prop];
+    return (getDb() as unknown as Record<string | symbol, unknown>)[prop];
   },
 });

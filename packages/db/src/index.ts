@@ -1,8 +1,8 @@
 // Schema exports
-export * from "./schema.js";
+export * from "./schema";
 
 // Client exports
-export { db, getDb } from "./client.js";
+export { db, getDb } from "./client";
 
 // Re-export drizzle operators for convenience
 export { eq, and, or, desc, asc, sql, count, sum, gte, lte, isNull, isNotNull, inArray } from "drizzle-orm";
